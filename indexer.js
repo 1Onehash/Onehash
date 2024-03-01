@@ -1,7 +1,5 @@
 const { Web3 } = require("web3");
 
-global.Buffer = global.Buffer || require("buffer").Buffer;
-
 class Indexer {
   static MAXIMUM_BLOCK_RANGE = 3000;
 
@@ -178,15 +176,3 @@ class Indexer {
     return [...result.entries()];
   }
 }
-
-// (async () => {
-//     let abiPath = './abi.json'
-//     let contrHash = '0x0D241F428dF5F596a2c6e7d3c7413FeE981f0e2C'
-//     let txHash = '0x238a9b25f00283deb07d3ec36645a53caa9690060f48a63026ada0cd2980f7ff'
-//     let indexer = await Indexer.new(abiPath, contrHash, txHash)
-//     let token = await indexer.indexToken()
-//     let eth = await indexer.indexETH()
-//     console.log(token)
-//     console.log(eth)
-// })()
-module.exports = { Indexer };
